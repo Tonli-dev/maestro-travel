@@ -2,3 +2,8 @@
 __pycache__/
 *.py[cod]
 .venv/
+
+# Local design context and review evidence
+.impeccable/
+PRODUCT.md
+README.md
