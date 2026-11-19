@@ -1,9 +1,45 @@
+# --- Documentation and AI notes stay local: no Markdown is committed anywhere in the repository. ---
+*.md
+*.MD
+*.markdown
+
+# --- Secrets and credentials (also covered in server/.gitignore; repeated here as a safety net). ---
+.env
+.env.*
+!.env.example
+auth.json
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+id_rsa*
+*credentials*
+local-admin*
+
+# --- Local databases, backups and dumps. ---
+*.sqlite
+*.sqlite*
+*.db
+*.sql
+*.sql.gz
+*.dump
+
+# --- Uploaded and generated content from the Laravel app. ---
+server/storage/app/private/*
+server/storage/app/public/*
+!server/storage/app/**/.gitignore
+
+# --- AI tools and local design context. ---
+.claude/
+.impeccable/
+.codex/
+.cursor/
+
+# --- OS, editors and Python. ---
 .DS_Store
+Thumbs.db
 __pycache__/
 *.py[cod]
 .venv/
-
-# Local design context and review evidence
-.impeccable/
-PRODUCT.md
-README.md
+*.log

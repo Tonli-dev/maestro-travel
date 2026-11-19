@@ -1,0 +1,274 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/**/*';
+
+:root {
+    --maestro-navy: #203c72;
+    --maestro-ink: #192d49;
+    --maestro-muted: #56636d;
+    --maestro-paper: #faf9f5;
+    --maestro-line: #dce0da;
+    --maestro-yellow: #f1cc50;
+}
+
+.fi-body {
+    background: var(--maestro-paper);
+    color: var(--maestro-ink);
+}
+
+::selection {
+    background: var(--maestro-yellow);
+    color: var(--maestro-ink);
+}
+
+input,
+textarea {
+    caret-color: var(--maestro-navy);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--maestro-muted);
+}
+
+.fi-topbar,
+.fi-body-has-topbar .fi-sidebar-header {
+    background: var(--maestro-paper);
+    border-bottom: 1px solid var(--maestro-line);
+    box-shadow: none;
+}
+
+.fi-sidebar {
+    background: var(--maestro-paper);
+    border-inline-end: 1px solid var(--maestro-line);
+}
+
+.fi-sidebar-item-btn {
+    min-height: 44px;
+    border-radius: 6px;
+    padding-inline: 14px;
+}
+
+.fi-sidebar-item-btn > .fi-icon {
+    color: var(--maestro-muted);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    background: var(--maestro-navy);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-sidebar-item-label {
+    color: #fff;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-icon {
+    color: var(--maestro-yellow);
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:focus-visible {
+    background: #e4eaf3;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn:hover,
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn:focus-visible {
+    background: #192f5b;
+}
+
+.fi-sidebar-item-btn:focus-visible {
+    outline: 2px solid var(--maestro-navy);
+    outline-offset: 3px;
+}
+
+.fi-header-heading,
+.fi-simple-header-heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    text-wrap: balance;
+}
+
+.fi-section:not(.fi-section-not-contained):not(.fi-aside),
+.fi-ta-ctn,
+.fi-simple-main {
+    border: 1px solid var(--maestro-line);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.fi-section-header-heading,
+.fi-ta-header-heading {
+    color: var(--maestro-ink);
+}
+
+.fi-ta-header-cell {
+    background: var(--maestro-paper);
+}
+
+.fi-ta-text-item,
+.fi-input {
+    font-variant-numeric: tabular-nums;
+}
+
+.fi-btn {
+    border-radius: 6px;
+}
+
+.fi-btn.fi-color-primary:not(.fi-outlined) {
+    --bg: var(--maestro-navy);
+    --text: #fff;
+    --hover-bg: #192f5b;
+    --hover-text: #fff;
+}
+
+.fi-btn.fi-size-md,
+.fi-btn.fi-size-lg,
+.fi-btn.fi-size-xl {
+    min-height: 44px;
+    padding-inline: 18px;
+}
+
+.fi-btn:focus-visible,
+.fi-icon-btn:focus-visible,
+.fi-link:focus-visible {
+    outline: 2px solid var(--maestro-navy);
+    outline-offset: 3px;
+}
+
+.fi-simple-main {
+    border-top: 3px solid var(--maestro-yellow);
+}
+
+.fi-simple-header .fi-logo {
+    height: auto;
+    max-width: 210px;
+    margin-bottom: 28px;
+}
+
+.fi-simple-main .fi-btn.fi-color-primary:not(.fi-outlined) {
+    --bg: var(--maestro-yellow);
+    --text: var(--maestro-ink);
+    --hover-bg: #e4bd3c;
+    --hover-text: var(--maestro-ink);
+}
+
+@media (min-width: 1024px) {
+    .fi-body {
+        --topbar-height: 5rem;
+    }
+
+    .fi-sidebar-nav {
+        padding-top: 32px;
+    }
+}
+
+@media (max-width: 639px) {
+    .fi-simple-main {
+        margin-inline: 16px;
+    }
+}
+
+/*
+ * Repeater items that are whole records (trip programs, Instagram posts) get a navy-headed panel.
+ * Trip programs vs. days: a program is a navy-headed panel; its days are white cards with a yellow edge,
+ * indented inside it, so the two nesting levels never look the same.
+ */
+.maestro-programs > .fi-fo-repeater-items,
+.maestro-panels > .fi-fo-repeater-items {
+    gap: 1.5rem;
+}
+
+.maestro-programs > .fi-fo-repeater-items > .fi-fo-repeater-item,
+.maestro-panels > .fi-fo-repeater-items > .fi-fo-repeater-item {
+    border: 1px solid #c9d3e3;
+    border-inline-start: 6px solid var(--maestro-navy);
+    border-radius: 10px;
+    background: #f3f5f9;
+    overflow: hidden;
+}
+
+.maestro-programs > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header,
+.maestro-panels > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header {
+    background: var(--maestro-navy);
+    padding-block: 0.75rem;
+}
+
+.maestro-programs > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-fo-repeater-item-header-label,
+.maestro-panels > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-fo-repeater-item-header-label {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.maestro-programs > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-icon-btn,
+.maestro-panels > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-icon-btn {
+    color: #fff;
+}
+
+.maestro-programs > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-icon-btn:hover,
+.maestro-panels > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-icon-btn:hover {
+    background: rgb(255 255 255 / 0.15);
+}
+
+.maestro-days > .fi-fo-repeater-items {
+    gap: 0.625rem;
+    padding-inline-start: 1rem;
+    border-inline-start: 2px dashed #c9d3e3;
+}
+
+.maestro-days > .fi-fo-repeater-items > .fi-fo-repeater-item {
+    border: 1px solid var(--maestro-line);
+    border-inline-start: 4px solid var(--maestro-yellow);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.maestro-days > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header {
+    background: #fffaf0;
+}
+
+.maestro-days > .fi-fo-repeater-items > .fi-fo-repeater-item > .fi-fo-repeater-item-header .fi-fo-repeater-item-header-label {
+    color: var(--maestro-ink);
+    font-weight: 600;
+}
+
+/* Instagram page: a small live preview of the linked post beside its fields. */
+.maestro-instagram-preview {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.maestro-instagram-preview-label {
+    font-weight: 600;
+    color: var(--maestro-ink);
+}
+
+.maestro-instagram-preview iframe {
+    width: 100%;
+    height: 440px;
+    border: 1px solid var(--maestro-line);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.maestro-instagram-preview a {
+    color: var(--maestro-navy);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.maestro-instagram-preview-empty {
+    display: grid;
+    place-items: center;
+    min-height: 200px;
+    padding: 1.5rem;
+    border: 1px dashed #c9d3e3;
+    border-radius: 10px;
+    color: var(--maestro-muted);
+    text-align: center;
+}

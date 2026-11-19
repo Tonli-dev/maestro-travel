@@ -1,0 +1,3 @@
+#!/bin/sh
+# Check every added, copied, modified or renamed file in this commit (deletions are allowed).
+git diff --cached --name-only --diff-filter=ACMR | sh "$(git rev-parse --show-toplevel)/.githooks/guard.sh" content

@@ -1,0 +1,16 @@
+#!/bin/sh
+# Check every file added or changed by the commits being pushed (deletions are allowed).
+zero=0000000000000000000000000000000000000000
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+    [ "$local_sha" = "$zero" ] && continue
+    if [ "$remote_sha" = "$zero" ]; then
+        commits=$(git rev-list "$local_sha" --not --remotes)
+    else
+        commits=$(git rev-list "$remote_sha..$local_sha")
+    fi
+    for commit in $commits; do
+        git diff-tree --no-commit-id --name-only -r --diff-filter=ACMR "$commit"
+    done | sort -u | sh "$(git rev-parse --show-toplevel)/.githooks/guard.sh" || status=1
+done
+exit $status

@@ -1,0 +1,314 @@
+/* Only production capabilities beyond the approved demo belong here. */
+::selection{background:var(--yellow);color:var(--ink)}
+html{scrollbar-color:var(--navy) var(--paper)}
+input,textarea{caret-color:var(--navy)}
+input::placeholder{color:var(--muted);opacity:1}
+.destination-copy[hidden],.destination-card[hidden],.destination-navigation[hidden],.destination-others[hidden]{display:none}
+.destination-copy,.card-copy,.term-picker,.detail-head>div,.catalog-prices{min-width:0}
+.destination-title,.card-copy h3,.detail h1{overflow-wrap:anywhere}
+.destination-card{background:#193147}
+.destination-price .amount-on-request{font-size:26px;white-space:normal}
+.catalog-prices{display:grid;gap:12px;font-variant-numeric:tabular-nums}
+.catalog-prices .price-person,.catalog-prices .availability-note{display:block}
+.catalog-prices .availability-note{font-size:12px;color:var(--muted);margin-top:4px}
+.catalog-prices>p{font-size:16px;margin:0}
+.price .amount-on-request,.detail-from .amount-on-request{font-size:25px;line-height:1.3}
+.filter-options{flex-wrap:wrap}
+.filter[aria-current=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+a.filter{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.js .catalog-search-submit{display:none}
+.filters[aria-busy=true] .search{opacity:.7}
+.card-image-placeholder{display:grid;place-items:center;background:#e4e9eb;min-height:260px;color:var(--navy);font-family:var(--serif);font-size:32px}
+.card-image>.card-image-placeholder{height:100%;min-height:0}
+.trip-overview-photo>.card-image-placeholder{position:absolute;inset:0}
+.destination-card>.card-image-placeholder{position:absolute;inset:0;min-height:0;font-size:22px}
+.preview-banner{background:#e8edf4;border-bottom:1px solid #bcc6d2;padding:20px 0;font-size:14px}
+.preview-banner p{margin:6px 0}
+.preview-banner a{text-decoration:underline;text-underline-offset:4px}
+.preview-banner strong{font-size:17px}
+.notice{background:#e8edf4;padding:18px 22px;margin:24px 0;font-size:15px}
+.term-option-form{display:contents}
+.term-choice:disabled{cursor:not-allowed;opacity:1;color:var(--muted);background:#eeeee8}
+.term-choice:disabled .term-mark{opacity:.5}
+.term-choice .amount-on-request{font-size:13px;white-space:normal;text-align:right;max-width:100px}
+.term-date{white-space:normal}
+.departure-selection{border:0;background:transparent;color:inherit;text-align:left}
+.departure-selection:disabled{cursor:not-allowed;opacity:1;color:var(--muted)}
+.departure-row input[type=hidden]{display:none}
+.selected-term-summary .amount-on-request{font-size:24px}
+.catalog-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0}
+.catalog-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.catalog-contact{display:grid;gap:14px;margin:22px 0}
+.catalog-contact p{font-size:14px;margin:12px 0}
+.catalog-contact .direct-call{display:block}
+.selected-term-phone{gap:4px}
+.viber-contact summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-size:14px;min-height:44px;padding:10px 0;border-bottom:1px solid var(--line)}
+.viber-contact[open] summary .icon{transform:rotate(90deg)}
+.contact-message{display:grid;gap:8px;font-size:14px;margin-top:12px}
+.contact-message textarea{width:100%;min-height:170px;resize:vertical;padding:12px;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.copy-status{font-size:14px;min-height:24px;margin-top:8px}
+.hotel-detail .term-options{grid-template-columns:1fr}
+.hotel-detail .detail-head{align-items:flex-start}
+.hotel-detail .detail-from{display:block;width:340px}
+.hotel-detail .detail-from .catalog-prices{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}
+.hotel-detail .detail-from strong{font-size:32px}
+.hotel-detail .trip-overview{align-items:start}
+.hotel-detail .trip-overview-photo{aspect-ratio:4/5;min-width:0;width:100%}
+.hotel-detail .term-choice{min-height:92px;height:auto;padding:14px 12px;column-gap:12px}
+.hotel-detail .term-cost{white-space:normal;text-align:right;max-width:150px}
+.term-package,.term-package-details{display:block}
+.term-package{font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.4}
+.term-package-details{font-size:12px;color:var(--muted);line-height:1.6;margin-top:5px}
+.term-basis{font-size:12px;margin-top:4px;line-height:1.4}
+.hotel-detail .detail-content>p{max-width:65ch}
+@media(max-width:959px){.hotel-detail .trip-overview-photo{aspect-ratio:16/10;min-height:280px}}
+@media(max-width:720px){
+ .filter-options{row-gap:8px}
+ .catalog-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .destination-price .amount-on-request{font-size:22px;max-width:100px}
+ .hotel-detail .term-choice{grid-template-columns:17px minmax(0,1fr) minmax(85px,auto);padding:12px 8px;gap:9px}
+ .hotel-detail .term-cost{max-width:115px;min-width:0}
+ .hotel-detail .term-date{font-size:13px}
+ .hotel-detail .detail-from{width:auto}
+ .hotel-detail .detail-from a{margin-top:12px}
+}
+
+/* Public responsive adaptation. */
+.container{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.header-phone,.detail .back,.catalog-contact .direct-call,.selected-term-phone,.contact-data a{min-height:44px;display:inline-flex;align-items:center}
+.filter-options,.filters .search,.card-bottom>* ,.detail-content,.booking,.contact-inner>*,.contact-data>*,.selected-term-summary>*{min-width:0}
+.filter-options{gap:8px}
+.filters .search input{min-width:0;font-size:16px}
+.detail-head p,.detail-content p,.included li,.booking dd,.contact-data a,.contact-data p,.card-copy>p,.trip-facts,.destination-description{overflow-wrap:anywhere}
+.wa-action{white-space:normal;text-align:center}
+.catalog-contact .direct-call{justify-content:center;flex-wrap:wrap;column-gap:4px;text-align:center}
+.contact-message textarea{font-size:16px}
+.contact-data .big-phone{white-space:nowrap}
+.term-choice{height:auto;min-height:60px}
+.term-picker-heading>span{flex-shrink:0}
+.departure-selection{min-height:44px}
+.selected-term-summary{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr) minmax(0,1fr) minmax(0,1.4fr)}
+.selected-term-summary .selected-term-contact{align-items:stretch}
+.selected-term-summary .selected-term-phone{align-self:stretch;justify-content:center;text-align:center}
+.booking .price strong,.selected-term-summary .selected-term-amount>strong{white-space:normal;overflow-wrap:anywhere}
+.catalog-gallery{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.catalog-gallery img{border-radius:4px}
+
+/* Let cards and the detail comparison breathe before the phone layout takes over. */
+@media(min-width:721px) and (max-width:1100px){
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px}
+ .card-copy h3{min-height:0;font-size:32px}
+ .card-copy>p{min-height:0}
+ .card-bottom{flex-direction:row;align-items:flex-end;flex-wrap:wrap;gap:12px}
+ .filters .search{flex:1 1 260px}
+ .about{gap:32px}
+ .about-photo img{height:auto;aspect-ratio:4/5}
+ .contact-inner{grid-template-columns:minmax(0,1fr);gap:36px}
+ .contact-data{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+ .contact-data .big-phone{font-size:28px}
+ .contact-data a{font-size:16px}
+ .detail-head{gap:28px}
+ .detail-from{padding-left:20px}
+ .detail-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:28px}
+ .booking{padding:24px}
+}
+@media(max-width:1100px){
+ .selected-term-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px}
+ .selected-term-summary .selected-term-amount{align-items:flex-end}
+ .selected-term-summary .selected-term-contact{align-self:start}
+}
+@media(min-width:960px) and (max-width:1100px){
+ .term-options{grid-template-columns:minmax(0,1fr)}
+ .trip-overview-photo{min-height:360px}
+}
+@media(min-width:721px) and (max-width:959px){
+ .header-inner{gap:24px}
+ .header nav{gap:22px;margin-right:0}
+ .brand{width:160px}
+ .header-phone{font-size:14px;gap:8px}
+ .section-top{align-items:flex-start;flex-direction:column;gap:20px}
+ .section-top>p{max-width:none}
+ .trip-overview{grid-template-columns:minmax(0,1fr)}
+ .trip-overview-photo{min-height:0;aspect-ratio:16/9}
+ .term-picker{grid-row:auto}
+ .term-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .term-choice{min-height:64px}
+ .detail h1{font-size:clamp(46px,6vw,60px)}
+ .contact-data{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){
+ .header-inner{padding-top:14px;min-height:104px}
+ .header-phone{font-size:14px}
+ .header nav{margin:0;gap:12px}
+ .header nav a{justify-content:center;flex:1;padding:10px 4px}
+ .header nav a:first-child{justify-content:flex-start}
+ .header nav a:last-child{justify-content:flex-end}
+ .destination-title{font-size:clamp(38px,10vw,62px)}
+ .destination-body{padding-top:30px}
+ .destination-actions{flex-wrap:wrap;gap:16px}
+ .destination-actions .btn{flex:1 1 165px;font-size:14px}
+ .destination-price{margin-left:auto}
+ .destination-bottom{gap:12px;flex-wrap:wrap}
+ .destination-all{min-height:44px}
+ .section-top{align-items:flex-start}
+ .section-top h2,.about h2,.instagram-heading h2,.contact h2{font-size:clamp(34px,8.8vw,46px)}
+ .filters{gap:16px;align-items:stretch}
+ .filter-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}
+ .filter{padding:11px 10px;font-size:14px;text-align:center}
+ .filters .search{width:100%;margin:0}
+ .cards{grid-template-columns:minmax(0,1fr)}
+ .card-copy>p,.about-copy>p,.detail-head p,.itinerary p,.included{font-size:16px;line-height:1.8}
+ .card-meta,.trip-facts{font-size:14px}
+ .card-copy h3{font-size:clamp(29px,7.5vw,36px)}
+ .card-bottom{flex-wrap:wrap;gap:12px}
+ .card-bottom>a{font-size:14px;gap:10px}
+ .card-bottom .catalog-prices{flex:1 1 130px}
+ .price strong{white-space:normal}
+ .about-photo img{height:auto;aspect-ratio:4/3}
+ .instagram-profile{white-space:normal;overflow-wrap:anywhere}
+ .instagram-profile>span{min-width:0}
+ .detail .back{margin:12px 0 24px}
+ .detail h1{font-size:clamp(36px,9.6vw,50px);line-height:1.08}
+ .detail-from{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+ .detail-from strong{font-size:38px;white-space:normal}
+ .detail-from a{max-width:145px;min-height:44px}
+ .detail-image{height:auto;aspect-ratio:4/3}
+ .trip-overview-photo{min-height:0;aspect-ratio:4/3}
+ .term-picker{grid-row:auto}
+ .term-choice{height:auto;min-height:60px;padding:12px 10px;gap:10px}
+ .term-date{font-size:16px}
+ .term-cost{min-width:0;max-width:120px;white-space:normal;text-align:right}
+ .term-cost strong{font-size:17px;overflow-wrap:anywhere}
+ .term-choice .amount-on-request{max-width:110px;font-size:15px}
+ .selected-term-summary{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:16px}
+ .selected-term-summary>div>strong{font-size:16px}
+ .selected-term-summary .selected-term-contact{grid-column:1/-1}
+ .selected-term-summary>p{grid-column:1/-1;font-size:14px}
+ .departure-row{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);padding:20px 10px;gap:12px}
+ .departure-price strong{white-space:normal;text-align:right;overflow-wrap:anywhere}
+ .departure-price .amount-on-request{font-size:23px}
+ .departure-selection{font-size:14px;text-align:right}
+ .detail-grid{display:flex;flex-direction:column;gap:24px}
+ .detail-grid h2{font-size:clamp(29px,7.8vw,36px)}
+ .detail-content{width:100%}
+ .booking{padding:24px;position:static}
+ .booking dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .booking dl>div{font-size:14px}
+ .contact-inner{grid-template-columns:minmax(0,1fr)}
+ .contact-data{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-data a{font-size:16px}
+ .empty{padding:32px 18px}
+ .has-whatsapp>.footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:380px){
+ .brand{width:132px}
+ .header-phone{font-size:13px;gap:6px}
+ .destination-inner{width:calc(100% - 36px)}
+ .destination-actions .btn{flex-basis:100%}
+ .destination-price{display:flex;align-items:baseline;gap:12px}
+ .destination-navigation{gap:6px}
+ .destination-all{gap:6px}
+ .detail-from{grid-template-columns:minmax(0,1fr)}
+ .detail-from a{grid-column:1;grid-row:auto;max-width:none}
+ .contact-data{grid-template-columns:minmax(0,1fr);gap:20px}
+ .contact-data .big-phone{font-size:32px}
+ .booking dl{grid-template-columns:minmax(0,1fr)}
+ .booking dl>div{flex-direction:row;gap:16px}
+ .booking dd{text-align:right}
+}
+@media(pointer:coarse){
+ .hotel-gallery a{min-height:44px}
+ .footer-inner>a:last-child{padding:10px 0}
+}
+@media(hover:none){
+ .trip-card:hover .card-image img{transform:none}
+}
+
+.catalog-tools {
+    display: grid;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+.catalog-types, .catalog-shortcuts, .catalog-chips, .catalog-pages,
+.catalog-amenities > div, .offer-labels, .offer-labels ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+.catalog-types {
+    gap: 28px;
+    border-bottom: 1px solid var(--line);
+}
+.catalog-types a {
+    padding: 6px 2px 13px;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+    font-size: 19px;
+    font-weight: 600;
+}
+.catalog-types a[aria-current] { border-color: var(--navy); color: var(--navy); }
+.catalog-shortcuts .filter {
+    min-height: 44px;
+    border: 1px solid var(--navy);
+    overflow-wrap: anywhere;
+}
+.catalog-search-form { display: grid; gap: 16px; }
+.catalog-search-form .btn { justify-self: start; }
+.catalog-fields { display: flex; flex-wrap: wrap; gap: 14px 18px; }
+.catalog-field {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    flex: 1 1 145px;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+}
+.catalog-field:first-child { flex: 2 1 240px; }
+.catalog-field select, .catalog-search-box {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper);
+    padding: 0 12px;
+    color: var(--ink);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 400;
+}
+.catalog-search-box { display: flex; gap: 10px; align-items: center; }
+.catalog-search-box:focus-within { outline: 2px solid var(--navy); }
+.catalog-search-box input { min-width: 0; width: 100%; height: 100%; background: transparent; border: 0; font: inherit; }
+.catalog-search-box .icon { flex: none; width: 18px; }
+.catalog-amenities { margin: 0; padding: 0; border: 0; min-width: 0; }
+.catalog-amenities legend { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.catalog-amenities label { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; cursor: pointer; overflow-wrap: anywhere; }
+.catalog-amenities input { width: 18px; height: 18px; flex: none; accent-color: var(--navy); }
+.catalog-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #e4eaf3;
+    color: var(--navy);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+}
+.catalog-chip .icon { width: 15px; height: 15px; flex: none; }
+.catalog-clear, .catalog-pages a { text-decoration: underline; text-underline-offset: 3px; padding: 8px 0; }
+.catalog-pages { justify-content: center; margin-top: 32px; gap: 20px; }
+.offer-labels { margin-top: 12px; font-size: 14px; }
+.offer-labels ul { list-style: none; margin: 0; padding: 0; }
+.offer-labels li { padding: 4px 10px; border: 1px solid var(--line); border-radius: 16px; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+    .catalog-tools { gap: 16px; }
+    .catalog-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .catalog-field:first-child, .catalog-field:last-child:nth-child(even) { grid-column: 1 / -1; }
+    .catalog-chip, .catalog-clear { min-height: 44px; }
+}
